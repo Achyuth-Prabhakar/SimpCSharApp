@@ -1,17 +1,23 @@
-﻿class Program
+﻿
+static void GetUserData()
 {
-    static int Main(string[] args)
-    {
-        Console.WriteLine("****APP***");
-        Console.WriteLine("Hello World");
-        Console.WriteLine();
+    
+    Console.Write("Please enter your name: ");
+   
+    string? userName = Console.ReadLine();
+    
+    Console.Write("Please enter your age: ");
+    
+    string? userAge = Console.ReadLine();
+    
+   
+    ConsoleColor prevColor = Console.ForegroundColor;
+    
+    Console.ForegroundColor = ConsoleColor.Yellow;
 
-        for (int i = 0; i < args.Length; i++)
-        {
-            Console.WriteLine("Arg: {0}", args[i]);
-        }
-        Console.ReadLine();
-
-        return 0;
-    }
+    Console.WriteLine("Hello {0}! You are {1} years old.", userName, userAge);
+    
+    Console.ForegroundColor = prevColor;
 }
+
+GetUserData();
